@@ -42,7 +42,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initQuickActions() {
     quickActions.initialize((type) {
-      if (type == null) return;
+      if (type == null) {
+        return;
+      }
       if (type == ShortcutItems.actionSearch.type) {
         print('Pressed: Search');
       } else if (type == ShortcutItems.actionTask.type) {
@@ -59,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(elevation: 0),
       body: Center(
         child: Text(
-          'No quick action set' ?? shortcut,
+          shortcut,
           style: const TextStyle(fontSize: 24),
         ),
       ),
